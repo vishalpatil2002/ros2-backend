@@ -1,0 +1,9 @@
+free_thresh: 0.196
+image: /home/bot/react-ros-robot1/flask-backend/maps/May27-1_edited.pgm
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -21.2
+- -21.2
+- 0.0
+resolution: 0.05

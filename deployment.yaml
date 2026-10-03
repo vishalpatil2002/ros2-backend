@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ros2-backend
+  labels:
+    app: ros2-backend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: ros2-backend
+
+  template:
+    metadata:
+      labels:
+        app: ros2-backend
+
+    spec:
+      containers:
+        - name: ros2-backend
+          image: vishal6363/ros2-backend:latest
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 5000
+
+            # ROS Bridge
+            - containerPort: 9090

@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "SS Automation SOlutions Pvt Ltd",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "http": "^0.0.1-security",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1",
+    "nodemon": "^3.1.9",
+    "path": "^0.12.7",
+    "redis": "^4.7.0",
+    "roslib": "^1.4.1",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.0.2"
+  }
+}
