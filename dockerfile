@@ -1,4 +1,4 @@
-FROM ros:humble
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV container=docker
@@ -76,11 +76,28 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     rm -rf /var/lib/apt/lists/*
 
 # --------------------------------
+# Copy ROS 2 workspace source
+# --------------------------------
+COPY build_taurus/src /root/build_taurus/src
+
+# --------------------------------
 # ROS 2 environment
 # --------------------------------
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
 
+# --------------------------------
+# Build build_taurus workspace
+# --------------------------------
+RUN /bin/bash -c "source /opt/ros/humble/setup.bash && \
+    cd /root/build_taurus && \
+    colcon build"
 
+# --------------------------------
+# Automatically source build_taurus
+# --------------------------------
+RUN echo "source /root/build_taurus/install/setup.bash" >> /root/.bashrc
+
+# --------------------------------
 # Ports
 # --------------------------------
 EXPOSE 9090
@@ -88,6 +105,6 @@ EXPOSE 3000
 EXPOSE 5000
 
 # --------------------------------
-# Start shell
+# Start container
 # --------------------------------
-CMD ["/bin/bash"]
+CMD ["/bin/bash", "-c", "source /opt/ros/humble/setup.bash && source /root/build_taurus/install/setup.bash && tail -f /dev/null"]

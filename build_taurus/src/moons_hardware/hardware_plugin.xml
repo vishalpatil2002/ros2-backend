@@ -1,0 +1,12 @@
+<library path="moons_hardware_plugin">  
+<!-- taurus_hardware is the name coming from the shared library name which is coming from cmakelist 
+ taurus_hw is a C++ namespace and class name in taurus_node.cpp.-->
+
+  <class name="taurus_hw/TaurusHardware"
+         type="taurus_hw::TaurusHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Taurus differential drive hardware interface plugin.
+    </description>
+  </class>
+</library>

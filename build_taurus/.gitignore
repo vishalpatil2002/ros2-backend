@@ -1,0 +1,49 @@
+<<<<<<< HEAD
+# ROS2 generated directories
+=======
+>>>>>>> origin/main
+build/
+install/
+log/
+
+<<<<<<< HEAD
+# Python
+=======
+>>>>>>> origin/main
+__pycache__/
+*.pyc
+*.pyo
+
+<<<<<<< HEAD
+# Compiled files
+=======
+>>>>>>> origin/main
+*.o
+*.a
+*.so
+*.d
+*.dpp
+
+<<<<<<< HEAD
+# IDE
+.vscode/
+.idea/
+
+# ROS bags
+=======
+.vscode/
+.idea/
+
+>>>>>>> origin/main
+*.bag
+*.db3
+*.mcap
+
+<<<<<<< HEAD
+# Credentials / secrets
+=======
+>>>>>>> origin/main
+.env
+*.pem
+*.key
+EOF

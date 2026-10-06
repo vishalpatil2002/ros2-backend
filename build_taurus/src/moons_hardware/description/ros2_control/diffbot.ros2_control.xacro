@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="taurus_ros2_control" params="name">
+
+<ros2_control name="${name}" type="system">
+
+<hardware>
+
+<plugin>taurus_hw/TaurusHardware</plugin>
+
+<param name="start_duration_sec">0.0</param>
+<param name="stop_duration_sec">3.0</param>
+
+<param name="device">/dev/ttyUSB0</param>
+<param name="baud">115200</param>
+
+<param name="l_inv">1</param>
+<param name="r_inv">-1</param>
+
+<param name="gear_ratio">40</param>
+
+<param name="counts_per_rev">10000</param>
+
+</hardware>
+
+<joint name="left_wheel">
+
+<command_interface name="velocity"/>
+
+<state_interface name="position"/>
+
+<state_interface name="velocity"/>
+
+</joint>
+
+<joint name="right_wheel">
+
+<command_interface name="velocity"/>
+
+<state_interface name="position"/>
+
+<state_interface name="velocity"/>
+
+</joint>
+
+</ros2_control>
+
+</xacro:macro>
+
+</robot>
